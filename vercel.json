@@ -1,6 +1,4 @@
 {
-    "buildCommand": "cd seedlings_by_mwalim && npm install && npm run build",
-    "outputDirectory": "seedlings_by_mwalim/dist",
     "framework": "vite",
     "rewrites": [
         {
