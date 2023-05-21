@@ -1,9 +1,22 @@
 {
-    "framework": "vite",
-    "rewrites": [
-        {
-            "source": "/api/(.*)",
-            "destination": "/backend_server/server.js"
+    "version": 2,
+    "builds": [
+      {
+        "src": "seedlings_by_mwalim/package.json",
+        "use": "@vercel/static-build",
+        "config": {
+          "buildCommand": "npm run build",
+          "outputDirectory": "seedlings_by_mwalim/dist"
         }
+      },
+      {
+        "src": "backend_server/server.js",
+        "use": "@vercel/node"
+      }
+    ],
+    "routes": [
+      { "src": "/api/(.*)", "dest": "backend_server/server.js" },
+      { "src": "/(.*)", "dest": "seedlings_by_mwalim/main.jsx" }
     ]
-}
+  }
+  
