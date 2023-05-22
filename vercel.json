@@ -14,7 +14,7 @@
         "use": "@vercel/node"
       }
     ],
-    "routes": [
+    "rewrites": [
       { "src": "/api/(.*)", "dest": "backend_server/server.js" },
       { "src": "/(.*)", "dest": "seedlings_by_mwalim/main.jsx" }
     ]
