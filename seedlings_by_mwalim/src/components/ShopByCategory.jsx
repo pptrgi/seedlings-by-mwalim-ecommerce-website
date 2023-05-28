@@ -37,7 +37,7 @@ function ShopByCategory({seedlings}) {
 
     
   return (
-    <div className='pt-[6rem] pb-[2rem]'>
+    <div className='pt-[6rem] pb-[2rem]' id='categories'>
         <h1 className='text-[2rem] text-titleColor font-mediumWeight text-center mb-[4rem] md:text-h1FontSize'>Shop by Category</h1>
         <div className='container grid grid-cols-1 gap-3 sm:grid-cols-3 px-[3rem] sm:px-[2rem] lg:px-[3rem]'>
             {categoryKeys.map((categoryKey, index) => {
@@ -54,7 +54,7 @@ function ShopByCategory({seedlings}) {
                                 <p className='text-whiteColor text-smallerFontSize'>{categories[categoryKey].categorySeedlings.length} items</p>
                             </div>
                             <div className='absolute bottom-[1rem] left-0 p-6'>
-                                <a onClick={e => dispatch(changeNavName(categoryKey))} className='text-ctaColor bg-whiteColor px-[2rem] py-[0.75rem] rounded-full text-normalFontSize cursor-pointer font-mediumWeight' >SHOP NOW</a>
+                                <a onClick={e => dispatch(changeNavName(categoryKey))} className='text-ctaColor bg-whiteColor px-[2rem] py-[0.75rem] rounded-full text-normalFontSize cursor-pointer font-mediumWeight  hover:text-titleColor' >SHOP NOW</a>
                             </div> 
                         </div>
                     </div>

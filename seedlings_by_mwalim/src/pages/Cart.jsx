@@ -13,7 +13,7 @@ function Cart() {
   const productItems = useSelector(state => state.seedling.productData)
   const dispatch = useDispatch()
   return (
-    <div className='pt-[4rem] pb-[4rem]'>
+    <div className='pt-[6rem] pb-[4rem]'>
       <div className='container'>
         {productItems.length > 0 ? 
           <>
@@ -35,12 +35,12 @@ function Cart() {
             </div>
             <div className='flex flex-col space-y-[1rem] justify-center items-center md:space-y-0 md:space-x-[2rem] mt-[2rem] md:flex-row'>
               <Link to='/'>
-                <div className='group flex space-x-[0.5rem] items-center px-[1rem] py-[0.5rem] bg-ctaColor rounded-lg'>
+                <div className='group flex space-x-[0.5rem] items-center px-[1rem] py-[0.5rem] bg-ctaColor rounded-lg '>
                   <span className='text-whiteColor text-normalFontSize font-semiBolded group-hover:-translate-x-1'><IoMdArrowBack /></span>
                   <span className='text-whiteColor text-smallFontSize font-semiBolded'>Continue shopping</span>
                 </div>
               </Link>
-              <div onClick={() => dispatch(resetCart()) & toast.error('Your cart is emptied')} className='flex space-x-[0.25rem] items-center bg-red-500 px-[1rem] py-[0.5rem] rounded-lg cursor-pointer'>
+              <div onClick={() => dispatch(resetCart()) & toast.error('Your cart is emptied')} className='flex space-x-[0.25rem] items-center bg-red-500 px-[1rem] py-[0.5rem] rounded-lg cursor-pointer hover:bg-red-600'>
                 <span className='text-whiteColor text-smallFontSize'>reset cart</span>
                 <span className='text-whiteColor text-smallFontSize'><FaRegTrashAlt /></span>
               </div>

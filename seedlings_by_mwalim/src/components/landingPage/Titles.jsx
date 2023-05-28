@@ -23,7 +23,7 @@ function Titles() {
     <div className='text-left'>
       <h3 className='text-h3FontSize text-titleColor md:text-h2FontSize'>Seedlings Species 2023</h3>
       <h1 className='text-h1FontSize font-semiBolded text-titleColor mt-[0.5rem] mb-[2rem] md:text-bigFontSize'>NEW <span ref={typedRef}></span></h1>
-      <a href='#products' className='px-[2rem] py-[0.75rem] bg-ctaColor text-bodyColor text-normalFontSize rounded-full cursor-pointer'>PLANT NOW</a>
+      <a href='#products' className='px-[2rem] py-[0.75rem] bg-ctaColor text-bodyColor text-normalFontSize rounded-full cursor-pointer hover:bg-titleColor'>PLANT NOW</a>
     </div>
   )
 }

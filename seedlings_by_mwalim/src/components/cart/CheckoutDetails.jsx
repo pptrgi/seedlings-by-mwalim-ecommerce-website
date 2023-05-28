@@ -10,6 +10,7 @@ import { resetCart } from '../../redux/seedlingSlice'
 function CheckoutDetails() {
     const [totalAmount, setTotalAmount] = useState(0)
     const [payNow, setPayNow] = useState(false)
+    const [errorPaying, setErrorPaying] = useState(false)
     const productData = useSelector(state => state.seedling.productData)
     const loggedInUserInfo = useSelector(state => state.seedling.userInfo)
     const navigate = useNavigate()
@@ -51,6 +52,8 @@ function CheckoutDetails() {
             dispatch(resetCart())
         }).catch(err => {
             console.log(err)
+            setErrorPaying(true)
+            setTimeout(() => setErrorPaying(false), 10000)
         })
     }
 
@@ -74,7 +77,7 @@ function CheckoutDetails() {
                     <span className='text-titleColor font-mediumWeight text-smallFontSize'>Total</span>
                     <span name="totalFigure" className='text-titleColor font-mediumWeight text-normalFontSize'>KES {totalAmount}</span>
                 </div>
-                <div onClick={handleProceedToCheckout} className='bg-ctaColor text-whiteColor text-smallFontSize font-mediumWeight cursor-pointer text-center px-6 py-2'>
+                <div onClick={handleProceedToCheckout} className='bg-ctaColor text-whiteColor text-smallFontSize font-mediumWeight cursor-pointer text-center px-6 py-2 hover:bg-titleColor'>
                     proceed to checkout
                 </div>
             </div>
@@ -94,7 +97,11 @@ function CheckoutDetails() {
                             </div>
                             <div className='my-[1.5rem] flex space-x-2 items-center'>
                                 <span className='text-textColor text-smallerFontSize'><IoMdInformationCircleOutline /></span>
-                                <p className='text-textColor text-tinyFontSize max-w-sm'>Mpesa will prompt you to enter PIN on your phone to complete this transaction</p>
+                                {errorPaying ? 
+                                    <p className='text-red-400 text-tinyFontSize max-w-sm'>Oops the server stumbled. We all have bad days... Try again in a min</p>
+                                    :
+                                    <p className='text-textColor text-tinyFontSize max-w-sm'>Mpesa will prompt you to enter PIN on your phone to complete this transaction</p>
+                                }
                             </div>
                         </form>
                     </div>
