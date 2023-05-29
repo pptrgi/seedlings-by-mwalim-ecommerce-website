@@ -39,9 +39,10 @@ function Footer() {
             </div>
             <div className='flex flex-col gap-6 md:gap-[3rem] mt-[2rem]'>
                 <div className='flex flex-row justify-center space-x-4 sm:space-x-4'>
-                  <a href="https://twitter.com/ptrgitonga"><BsTwitter size={18} className='text-titleColor hover:text-ctaColor'/></a>
-                  <a href="https://wa.me/254700119134"><BsWhatsapp size={18} className='text-titleColor hover:text-ctaColor'/></a>
-                  <a href="https://www.facebook.com/pptrgitonga"><BsFacebook size={18} className='text-titleColor hover:text-ctaColor'/></a>
+                    <a href="https://twitter.com/ptrgitonga"><BsTwitter size={18} className='text-titleColor hover:text-ctaColor'/></a>
+                    <a href="https://www.linkedin.com/in/petergitonga"><BsLinkedin size={18} className='text-titleColor hover:text-ctaColor'/></a>
+                    <a href="https://wa.me/254700119134"><BsWhatsapp size={18} className='text-titleColor hover:text-ctaColor'/></a>
+                    <a href="https://www.facebook.com/pptrgitonga"><BsFacebook size={18} className='text-titleColor hover:text-ctaColor'/></a>
                 </div>
                 <span className='text-textColor text-smallFontSize'>Copyright &#169; 2023. Developed by <a href="https://ptrgitonga.vercel.app" className='font-semiBolded text-ctaColor underline underline-offset-2 hover:text-titleColor'>Peter Gitonga</a></span>
             </div>
