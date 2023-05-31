@@ -15,8 +15,8 @@
       }
     ],
     "rewrites": [
-      { "src": "/api/(.*)", "dest": "backend_server/server.js" },
-      { "src": "/(.*)", "dest": "seedlings_by_mwalim/main.jsx" }
+      { "source": "/(.*)", "destination": "seedlings_by_mwalim/main.jsx" },
+      { "source": "/api/(.*)", "destination": "backend_server/server.js" }
     ]
   }
   
