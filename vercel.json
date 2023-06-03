@@ -15,7 +15,7 @@
       }
     ],
     "rewrites": [
-      { "source": "/(.*)", "destination": "seedlings_by_mwalim/main.jsx" },
+      { "source": "/(.*)", "destination": "seedlings_by_mwalim/index.html" },
       { "source": "/api/(.*)", "destination": "backend_server/server.js" }
     ]
   }
