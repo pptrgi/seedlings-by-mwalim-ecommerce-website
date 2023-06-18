@@ -1,14 +1,14 @@
 # Seedlings By Mwalim E-Commerce Website
 
-Inspired by my uncle's (Mr. Njagi) seedlings farm, Seedlings By Mwalim is an online seedlings selling site that is integrated with M-Pesa for the payment service. It is built with React on the frontend and the Express.js backend communicates with Safaricom's Daraja API. The application also serves as a training project for API integration, state management with technologies like Redux, and also to master 60 30 10 color principle when styling.
+Inspired by my uncle's (Mr. Njagi) seedlings farm, Seedlings By Mwalim is an online seedlings selling site that is integrated with M-Pesa for the payment service. It is built with React on the frontend and the Express.js backend communicates with Safaricom's Daraja API to initiate the payment process. The application also serves as a training project for API development and integration, state management with technologies like Redux, routing, and also to master 60 30 10 color principle when styling.
 
-Along with my credentials for Daraja 2.0 account, the backend sends a post request with the data(phone number and amount) received from the user as payload to the Daraja API for authentication, after which an STK push is triggered to the user's phone prompting them to enter their M-Pesa password to complete the transaction. This request is then sent to M-Pesa for processing.
+Signed in or not the application will allow the user to add items to cart. Items in the shopping cart are displayed in the Shopping Cart section of the cart page with buttons to increase or decrease the item quantity while there. To checkout, the user needs to sign in (if they weren't already) with their Google account. In this application the user sign-in method is Google's Sign-In With Popup provided by Firebase authentication.  
 
-The application uses Redux library to manage the state of the cart operations, signed-in user, and filter products by category from various components. Device's local storage holds the state data thanks to Redux-persist.
+Checking out, the user is required to enter their Safaricom phone number as 07... . When the user clicks the Pay Now button, the phone number they entered and the total amount on the Checkout Totals section of the cart page are passed to the backend server.
 
-Before the user can checkout, the application requires that they are signed-in, have atleast one item in the shopping cart, and only then they can click the proceed to checkout button and the form to input number(Safaricom) appears.
+The server sends a get request with basic auth authorization headers to the Daraja API. The API will receive encrypted Daraja account credentials for authentication. If successful, the server receives an access token that will enable access and making of requests to certain API endpoints. The server then sends a post request with the data required by MPesa to process an MPesa request including sender's and receiver's information, together with the earlier received access token as an authorization header, to the Daraja API endpoint responsible for processing these types of requests. The API then sends an STK to the user's phone prompting them to enter their MPesa password to complete the transaction. After the user pays, a payment processing request is sent to MPesa by the API.
 
-The user sign-in method is Google's Sign-In With Popup provided by Firebase authentication
+The application uses Redux library to manage the state of the cart operations, signed-in user, and filter products by category from various components. Device's local storage persists the state data thanks to Redux-persist.
 
 It is styled with Tailwind CSS, and Canva is used to create the logo.
 
@@ -68,8 +68,8 @@ I would like to express our gratitude to the creators and maintainers of the fol
 - React
 - Express
 - Firebase
-- Rdux
-- Tailwindcss
+- Redux
+- Tailwind CSS
 - Axios
 - CORS
 - React Router
@@ -83,4 +83,6 @@ I would like to express our gratitude to the creators and maintainers of the fol
 - React Countdown
 - Body-parser
 - Canva
+<br>
+
 I appreciate the hard work and dedication of the developers behind these projects, which have greatly contributed to the success of my own work.
