@@ -3,12 +3,26 @@
 @tailwind utilities;
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 .swiper-pagination-bullet {
-    background-color: #9194A2;
+  background-color: #9194a2;
 }
 .swiper-pagination-bullet-active {
-    background-color: #5267DF;
+  background-color: #5267df;
+}
+
+/* Remove the increment and decrement arrow buttons in the number input fields */
+/* In Chrome and Safari */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+input[type="number"] {
+  /* In Firefox */
+  -moz-appearance: none;
+
+  /* In Edge */
+  appearance: none;
 }

@@ -35,14 +35,14 @@ function Cart() {
             </div>
             <div className='flex flex-col space-y-[1rem] justify-center items-center md:space-y-0 md:space-x-[2rem] mt-[2rem] md:flex-row'>
               <Link to='/'>
-                <div className='group flex space-x-[0.5rem] items-center px-[1rem] py-[0.5rem] bg-ctaColor rounded-lg '>
-                  <span className='text-whiteColor text-normalFontSize font-semiBolded group-hover:-translate-x-1'><IoMdArrowBack /></span>
-                  <span className='text-whiteColor text-smallFontSize font-semiBolded'>Continue shopping</span>
+                <div className='group flex space-x-[0.5rem] items-center px-[1rem] py-[0.5rem] border-[1px] border-textColor rounded-lg'>
+                  <span className='text-textColor text-normalFontSize font-semiBolded group-hover:-translate-x-1'><IoMdArrowBack /></span>
+                  <span className='text-textColor text-smallFontSize font-semiBolded'>Continue shopping</span>
                 </div>
               </Link>
               <div onClick={() => dispatch(resetCart()) & toast.error('Your cart is emptied')} className='flex space-x-[0.25rem] items-center bg-red-500 px-[1rem] py-[0.5rem] rounded-lg cursor-pointer hover:bg-red-600'>
-                <span className='text-whiteColor text-smallFontSize'>reset cart</span>
-                <span className='text-whiteColor text-smallFontSize'><FaRegTrashAlt /></span>
+                <span className='text-whiteColor text-smallFontSize font-semiBolded'>reset cart</span>
+                <span className='text-whiteColor text-smallFontSize font-semiBolded'><FaRegTrashAlt /></span>
               </div>
             </div>
           </>

@@ -1,18 +1,18 @@
-import Header from './components/Header';
-import Home from './pages/Home';
-import Footer from './components/Footer';
-import './App.css';
+import Header from "./components/Header";
+import Home from "./pages/Home";
+import Footer from "./components/Footer";
 import {
   createBrowserRouter,
   Outlet,
   RouterProvider,
-  ScrollRestoration
-} from 'react-router-dom';
-import { productsData } from './components/productsData/ProductsData';
-import ProductDetail from './components/productsOverview/ProductDetail';
-import Cart from './pages/Cart';
-import Login from './pages/Login';
-import Contacts from './pages/Contacts';
+  ScrollRestoration,
+} from "react-router-dom";
+import { productsData } from "./components/productsData/ProductsData";
+import ProductDetail from "./components/productsOverview/ProductDetail";
+import Cart from "./pages/Cart";
+import Login from "./pages/Login";
+import Contacts from "./pages/Contacts";
+import NotFoundPage from "./pages/NotFoundPage";
 
 const Layout = () => {
   return (
@@ -22,8 +22,8 @@ const Layout = () => {
       <Outlet />
       <Footer />
     </div>
-  )
-}
+  );
+};
 
 const router = createBrowserRouter([
   {
@@ -37,31 +37,34 @@ const router = createBrowserRouter([
       },
       {
         path: "/product/:id",
-        element: <ProductDetail />
+        element: <ProductDetail />,
       },
       {
         path: "/cart",
-        element: <Cart />
+        element: <Cart />,
       },
       {
         path: "/login",
-        element: <Login />
+        element: <Login />,
       },
       {
-        path: '/contacts',
-        element: <Contacts />
-      }
-    ]
-  }
-])
+        path: "/contacts",
+        element: <Contacts />,
+      },
+      {
+        path: "*",
+        element: <NotFoundPage />,
+      },
+    ],
+  },
+]);
 
 function App() {
-
   return (
     <div className="bg-bodyColor">
       <RouterProvider router={router} />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
