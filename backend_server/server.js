@@ -1,22 +1,16 @@
-const express = require('express')
-const app = express()
+const express = require("express");
+const cors = require("cors");
+const bodyParser = require("body-parser");
+const app = express();
+require("dotenv").config();
 
-const cors = require('cors')
-app.use(cors())
+const PORT = process.env.PORT || 2828;
 
-const bodyParser = require('body-parser')
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({extended: true}))
-require('dotenv').config()
+app.use(cors());
 
-const port = process.env.PORT
-app.listen(port, () => console.log(`Server listening on port ${port}`))
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get('/api', (req, res) => {
-    res.send("Seedlings by Mwalim server's home page")
-})
+app.use("/api", require("./route/route"));
 
-const TokenRoute = require('./routes/token')
-app.use('/api/token', TokenRoute)
-
-
+app.listen(PORT, () => console.log(`Server listening on port ${PORT}`));
