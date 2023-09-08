@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { changeNavName } from "../redux/seedlingSlice";
 import { toast } from "react-toastify";
+import { changeNavName } from "../redux/seedlingSlice";
 import orangeFruit from "/images/orangeFruit.png";
 import trees from "/images/trees.png";
 import flower2 from "/images/flower2.png";
@@ -49,6 +49,7 @@ function ShopByCategory({ seedlings }) {
               <img
                 className="absolute bottom-[0.5rem] left-[3rem]"
                 src={categories[categoryKey].image}
+                alt={`${categories[categoryKey].name}`}
               />
               <div className="absolute top-0 left-0 p-6 group-hover:opacity-0">
                 <h3 className="text-textColor text-h2FontSize font-mediumWeight mb-[0.5rem]">

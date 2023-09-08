@@ -2,10 +2,10 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { IoIosCart, IoMdMenu } from "react-icons/io";
 import { BiX } from "react-icons/bi";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
+import { BiUser, BiCategory } from "react-icons/bi";
+import { FaRegUserCircle } from "react-icons/fa";
 import seedlingsLogo from "/images/logos/seedlingsLogo.png";
-import { BiUser, BiCartAlt, BiCategory } from "react-icons/bi";
-import { FaRegUserCircle, FaUserAlt } from "react-icons/fa";
 
 function Header() {
   const [showMenu, setShowMenu] = useState(false);
@@ -20,8 +20,8 @@ function Header() {
             <img
               src={seedlingsLogo}
               className="-mt-[0.25rem] sm:-mt-[0.85rem] object-cover"
-              alt="SeedlingsByMwalimLogo"
-              loading="priority"
+              alt="Seedlings by Mwalim Logo"
+              loading="eager"
             />
           </Link>
           <div className="hidden justify-center gap-6 items-center text-normalFontSize sm:flex">
@@ -63,7 +63,7 @@ function Header() {
               {userInfo ? (
                 <img
                   src={userInfo.image}
-                  alt=""
+                  alt="User Profile"
                   className="w-8 h-8 rounded-full"
                 />
               ) : (
@@ -126,7 +126,7 @@ function Header() {
                   <img
                     src={seedlingsLogo}
                     className="w-36 h-[3.5rem] cursor-pointer"
-                    alt="SeedlingsByMwalimLogo"
+                    alt="Seedlings by Mwalim Logo"
                   />
                 </Link>
                 <div
@@ -171,13 +171,13 @@ function Header() {
                   {userInfo ? (
                     <Link to="/login">
                       <span className="p-6 px-4 py-2 bg-ctaColor text-normalFontSize text-bodyColor rounded-md cursor-pointer hover:bg-titleColor">
-                        Logout
+                        Sign Out
                       </span>
                     </Link>
                   ) : (
                     <Link to="/login">
                       <span className="p-6 px-4 py-2 bg-ctaColor text-normalFontSize text-bodyColor rounded-md cursor-pointer hover:bg-titleColor">
-                        Login
+                        Sign In
                       </span>
                     </Link>
                   )}

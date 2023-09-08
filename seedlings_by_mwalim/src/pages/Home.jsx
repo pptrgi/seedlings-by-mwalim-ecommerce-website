@@ -1,11 +1,9 @@
 import { useState, useEffect } from "react";
-
+import { useLoaderData } from "react-router-dom";
 import LandingPage from "../components/landingPage/LandingPage";
 import ViewByCategory from "../components/ViewByCategory";
 import Products from "../components/productsOverview/Products";
 import SliderContents from "../components/sliderContents/SliderContents";
-
-import { useLoaderData } from "react-router-dom";
 
 function Home() {
   const [products, setProducts] = useState([]);

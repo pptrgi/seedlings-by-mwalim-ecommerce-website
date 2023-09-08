@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import mpesaLogo from "/images/logos/MpesaLogo.png";
 import { IoMdInformationCircleOutline } from "react-icons/io";
 import { toast, ToastContainer } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { resetCart } from "../../redux/seedlingSlice";
+import mpesaLogo from "/images/logos/MpesaLogo.png";
 
 function CheckoutDetails() {
   const [totalAmount, setTotalAmount] = useState(0);

@@ -1,10 +1,10 @@
 import React from "react";
 import Countdown from "react-countdown";
-import { Data } from "./SliderData.jsx";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
-import { Pagination } from "swiper";
+import { Data } from "./SliderData.jsx";
 
 function SliderContents() {
   const Completionist = () => <span>Offer Expired!</span>;
@@ -95,7 +95,7 @@ function SliderContents() {
                 <img
                   src={data.image}
                   className="opacity-30 object-cover"
-                  alt=""
+                  alt={`${data.textSubHeading}`}
                 />
                 <h2 className="absolute top-4 uppercase text-textColor text-normalFontSize mb-[0.5rem]">
                   {data.textHeader}
