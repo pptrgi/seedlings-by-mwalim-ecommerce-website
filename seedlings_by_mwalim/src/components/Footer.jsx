@@ -31,7 +31,7 @@ function Footer() {
             />
           </div>
         </div>
-        <div className="flex justify-between items-start w-full sm:w-1/2 lg:w-3/12 xl:w-1/5">
+        <div className="flex justify-between items-start w-full sm:w-1/2 lg:w-3/12">
           <div className="flex flex-col items-start">
             <h4 className="font-mediumWeight text-normalFontSize mb-[0.75rem]">
               CATEGORIES
