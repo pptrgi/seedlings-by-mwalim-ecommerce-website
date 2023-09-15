@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import emailjs from "@emailjs/browser";
-import { toast } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 
 function DirectContact() {
   const seedlingsForm = useRef();
@@ -10,10 +10,10 @@ function DirectContact() {
 
     emailjs
       .sendForm(
-        `${process.env.REACT_APP_SERVICE_ID}`,
-        `${process.env.REACT_APP_TEMPLATE_ID}`,
+        `${import.meta.env.VITE_SERVICE_ID}`,
+        `${import.meta.env.VITE_TEMPLATE_ID}`,
         seedlingsForm.current,
-        `${process.env.REACT_APP_EMAIL_PUBLIC_KEY}`
+        `${import.meta.env.VITE_EMAIL_PUBLIC_KEY}`
       )
       .then(() => {
         e.target.reset();
@@ -21,7 +21,6 @@ function DirectContact() {
       })
       .catch((err) => {
         toast.error("Message not sent, try resending");
-        console.log(err);
       });
   };
 
@@ -80,6 +79,19 @@ function DirectContact() {
           </div>
         </form>
       </div>
+
+      <ToastContainer
+        position="top-left"
+        autoClose={2500}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
     </div>
   );
 }
