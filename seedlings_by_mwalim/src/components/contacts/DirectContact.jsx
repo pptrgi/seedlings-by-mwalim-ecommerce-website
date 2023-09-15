@@ -1,19 +1,28 @@
 import React, { useRef } from "react";
 import emailjs from "@emailjs/browser";
+import { toast } from "react-toastify";
 
 function DirectContact() {
-  const form = useRef();
+  const seedlingsForm = useRef();
+
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm(
-      `${process.env.REACT_APP_SERVICE_ID}`,
-      `${process.env.REACT_APP_TEMPLATE_ID}`,
-      form.current,
-      `${process.env.REACT_APP_EMAIL_PUBLIC_KEY}`
-    );
-
-    e.target.reset();
+    emailjs
+      .sendForm(
+        `${process.env.REACT_APP_SERVICE_ID}`,
+        `${process.env.REACT_APP_TEMPLATE_ID}`,
+        seedlingsForm.current,
+        `${process.env.REACT_APP_EMAIL_PUBLIC_KEY}`
+      )
+      .then(() => {
+        e.target.reset();
+        toast.success("Your message has been sent");
+      })
+      .catch((err) => {
+        toast.error("Message not sent, try resending");
+        console.log(err);
+      });
   };
 
   return (
@@ -22,7 +31,7 @@ function DirectContact() {
         Direct Message
       </h3>
       <div className="border-[1px] border-gray-200 rounded-[1rem] px-[1.5rem] py-[2rem] sm:px-[2rem]">
-        <form ref={form} onSubmit={sendEmail}>
+        <form ref={seedlingsForm} onSubmit={sendEmail}>
           <div className="flex flex-col space-y-4 items-center w-full">
             <div className="flex flex-col space-y-1 items-start w-full">
               <label className="text-smallerFontSize text-textColor font-normalWeight">
