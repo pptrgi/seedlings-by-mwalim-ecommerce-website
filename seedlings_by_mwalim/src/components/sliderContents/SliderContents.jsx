@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
-import { Data } from "./SliderData.jsx";
+import { data } from "./SliderData";
 
 function SliderContents() {
   const Completionist = () => <span>Offer Expired!</span>;
@@ -86,10 +86,10 @@ function SliderContents() {
           }}
           modules={[Pagination]}
         >
-          {Data.map((data) => {
+          {data.map((data, index) => {
             return (
               <SwiperSlide
-                key={data.id}
+                key={index}
                 className="relative border-2 border-gray-200 rounded-[1.25rem] px-[1rem] py-[1.5rem] h-60 overflow-hidden mb-[3rem]"
               >
                 <img
