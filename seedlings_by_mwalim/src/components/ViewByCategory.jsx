@@ -44,7 +44,7 @@ function ShopByCategory({ seedlings }) {
           return (
             <div
               key={index}
-              className="relative group bg-whiteColor border-2 shadow-md h-[300px] overflow-hidden lg:h-[320px]"
+              className="relative group bg-whiteColor shadow-md h-[300px] overflow-hidden lg:h-[320px]"
             >
               <img
                 className="absolute bottom-[0.5rem] left-[3rem]"

@@ -1,18 +1,19 @@
-import React from "react";
+import { Link } from "react-router-dom";
 import { BsFacebook, BsTwitter, BsLinkedin, BsWhatsapp } from "react-icons/bs";
+import { RiTwitterXFill } from "react-icons/ri";
+
 import seedlingsLogo from "/images/logos/seedlingsLogo.png";
 import LipaNaMpesaLogo from "/images/logos/LipaNaMpesaLogo.png";
-import { Link } from "react-router-dom";
 
 function Footer() {
   return (
     <div className="bg-whiteColor border-t-2 border-t-gray-200">
       <div className="container flex flex-col justify-between items-center pt-[4rem] pb-[6rem] lg:items-start lg:h-0 lg:flex-row">
         <div className="flex flex-col items-center">
-          <h3 className="font-mediumWeight text-h3FontSize mb-[2rem] ">
+          <h3 className="font-mediumWeight text-h3FontSize mb-[2rem] tracking-wide">
             SEEDLINGS BY MWALIM
           </h3>
-          <span className="text-smallFontSize text-textColor mb-[1rem] max-w-[250px] sm:max-w-sm text-center lg:max-w-[250px]">
+          <span className=" text-textColor tracking-wide mb-[1rem] max-w-[250px] sm:max-w-sm text-center lg:max-w-[250px]">
             Get more than just seedlings from Seedlings By Mwalim this Season!
           </span>
           <span className="text-textColor font-mediumWeight">
@@ -39,25 +40,25 @@ function Footer() {
             <div className="flex flex-col gap-2">
               <a
                 href="#products"
-                className="text-titleColor hover:text-textColor"
+                className="text-textColor hover:text-titleColor"
               >
                 Fruits
               </a>
               <a
                 href="#products"
-                className="text-titleColor hover:text-textColor"
+                className="text-textColor hover:text-titleColor"
               >
                 Trees
               </a>
               <a
                 href="#products"
-                className="text-titleColor hover:text-textColor"
+                className="text-textColor hover:text-titleColor"
               >
                 Flowers
               </a>
               <a
                 href="#products"
-                className="text-titleColor hover:text-textColor"
+                className="text-textColor hover:text-titleColor"
               >
                 Vegetables
               </a>
@@ -70,20 +71,20 @@ function Footer() {
             <div className="flex flex-col gap-2">
               <Link
                 to="/contacts"
-                className="text-titleColor hover:text-textColor"
+                className="text-textColor hover:text-titleColor"
               >
                 Contact
               </Link>
               <Link
                 to="/login"
-                className="text-titleColor hover:text-textColor"
+                className="text-textColor hover:text-titleColor"
               >
                 Login
               </Link>
-              <Link to="/cart" className="text-titleColor hover:text-textColor">
+              <Link to="/cart" className="text-textColor hover:text-titleColor">
                 Cart
               </Link>
-              <Link to="/" className="text-titleColor hover:text-textColor">
+              <Link to="/" className="text-textColor hover:text-titleColor">
                 Home
               </Link>
             </div>
@@ -92,7 +93,7 @@ function Footer() {
         <div className="flex flex-col gap-6 md:gap-[3rem] mt-[2rem]">
           <div className="flex flex-row justify-center space-x-4 sm:space-x-4">
             <a href="https://twitter.com/ptrgitonga">
-              <BsTwitter
+              <RiTwitterXFill
                 size={18}
                 className="text-titleColor hover:text-ctaColor"
               />

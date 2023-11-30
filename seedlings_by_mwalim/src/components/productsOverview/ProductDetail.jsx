@@ -31,7 +31,7 @@ function ProductDetail() {
               {details.name}
             </h2>
             <div>
-              <span className="text-smallFontSize line-through text-textColor">
+              <span className="text-smallFontSize line-through text-textColor/60">
                 KES {details.oldPrice}
               </span>
               <span className="text-normalFontSize text-textColor inline-block ml-[0.5rem]">
@@ -86,7 +86,7 @@ function ProductDetail() {
                     `${baseQuantity} ${details.name}s added successfully`
                   )
                 }
-                className="bg-ctaColor text-bodyColor text-normalFontSize px-[1rem] py-[0.5rem] cursor-pointer"
+                className="bg-ctaColor text-bodyColor text-normalFontSize px-[1.5rem] py-[0.6rem] cursor-pointer"
               >
                 add to cart
               </span>

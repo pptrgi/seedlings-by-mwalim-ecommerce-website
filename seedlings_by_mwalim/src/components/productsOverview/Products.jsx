@@ -46,7 +46,7 @@ function Products({ products }) {
               className={
                 active == index
                   ? "flex ml-[1rem] text-normalFontSize text-titleColor font-mediumWeight cursor-pointer"
-                  : "flex ml-[1rem] text-normalFontSize text-textColor font-mediumWeight cursor-pointer hover:underline underline-offset-2"
+                  : "flex ml-[1rem] text-normalFontSize text-titleColor/40 font-mediumWeight cursor-pointer hover:underline underline-offset-2"
               }
             >
               {navItem.name}
@@ -54,7 +54,7 @@ function Products({ products }) {
           );
         })}
       </div>
-      <div className="container grid grid-cols-2 gap-3 items-center sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+      <div className="container grid grid-cols-2 gap-[0.5rem] items-center sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
         {groupProducts.map((product) => {
           return <ProductCard key={product.id} product={product} />;
         })}

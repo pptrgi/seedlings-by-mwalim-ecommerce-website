@@ -27,31 +27,31 @@ function Header() {
           <div className="hidden justify-center gap-6 items-center text-normalFontSize sm:flex">
             <a
               href="#products"
-              className="text-titleColor font-normalWeight hover:text-ctaColor"
+              className="text-titleColor/50 tracking-wide font-normalWeight hover:text-ctaColor"
             >
               Fruits
             </a>
             <a
               href="#products"
-              className="text-titleColor font-normalWeight hover:text-ctaColor"
+              className="text-titleColor/50 tracking-wide font-normalWeight hover:text-ctaColor"
             >
               Trees
             </a>
             <a
               href="#products"
-              className="text-titleColor font-normalWeight hover:text-ctaColor"
+              className="text-titleColor/50 tracking-wide font-normalWeight hover:text-ctaColor"
             >
               Flowers
             </a>
             <Link to="/contacts">
               {" "}
-              <span className="text-titleColor font-normalWeight hover:text-ctaColor">
-                Contact us
+              <span className="text-titleColor/50 tracking-wide font-normalWeight hover:text-ctaColor">
+                Contact
               </span>
             </Link>
             <Link to="/cart">
               <div className="relative group w-8">
-                <span className="text-titleColor text-[1.125rem] group-hover:text-ctaColor">
+                <span className="text-titleColor/70 text-[1.125rem] group-hover:text-ctaColor">
                   <IoIosCart />
                 </span>
                 <span className="absolute -top-2 right-0 bg-ctaColor w-4 h-4 rounded-full text-whiteColor text-center text-[10px]">
@@ -59,25 +59,27 @@ function Header() {
                 </span>
               </div>
             </Link>
-            <Link to="/login">
-              {userInfo ? (
-                <img
-                  src={userInfo.image}
-                  alt="User Profile"
-                  className="w-8 h-8 rounded-full"
-                />
-              ) : (
-                <span className="px-4 py-2 bg-ctaColor text-normalFontSize text-bodyColor rounded-md cursor-pointer hover:bg-titleColor">
-                  Sign In
-                </span>
-              )}
-            </Link>
-            <div>
-              {userInfo && (
-                <span className="text-textColor text-smallFontSize">{`Hi, ${
-                  userInfo.name.split(" ")[0]
-                }`}</span>
-              )}
+            <div className="flex gap-[0.75rem] items-center">
+              <Link to="/login">
+                {userInfo ? (
+                  <img
+                    src={userInfo.image}
+                    alt="User Profile"
+                    className="w-8 h-8 rounded-full"
+                  />
+                ) : (
+                  <span className="px-[2rem] py-[0.75rem] bg-ctaColor text-normalFontSize text-bodyColor rounded-full cursor-pointer hover:bg-titleColor">
+                    Sign In
+                  </span>
+                )}
+              </Link>
+              <div>
+                {userInfo && (
+                  <span className="text-textColor text-smallFontSize">{`Hi, ${
+                    userInfo.name.split(" ")[0]
+                  }`}</span>
+                )}
+              </div>
             </div>
           </div>
           {showMenu && (
@@ -170,13 +172,13 @@ function Header() {
                 >
                   {userInfo ? (
                     <Link to="/login">
-                      <span className="p-6 px-4 py-2 bg-ctaColor text-normalFontSize text-bodyColor rounded-md cursor-pointer hover:bg-titleColor">
+                      <span className="px-[2rem] py-[0.75rem] bg-ctaColor text-normalFontSize text-bodyColor rounded-full cursor-pointer hover:bg-titleColor">
                         Sign Out
                       </span>
                     </Link>
                   ) : (
                     <Link to="/login">
-                      <span className="p-6 px-4 py-2 bg-ctaColor text-normalFontSize text-bodyColor rounded-md cursor-pointer hover:bg-titleColor">
+                      <span className="px-[2rem] py-[0.75rem] bg-ctaColor text-normalFontSize text-bodyColor rounded-full cursor-pointer hover:bg-titleColor">
                         Sign In
                       </span>
                     </Link>

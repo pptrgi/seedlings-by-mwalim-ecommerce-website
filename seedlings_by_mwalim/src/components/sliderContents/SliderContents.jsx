@@ -1,9 +1,9 @@
-import React from "react";
 import Countdown from "react-countdown";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
+
 import { data } from "./SliderData";
 
 function SliderContents() {
@@ -19,34 +19,34 @@ function SliderContents() {
       return (
         <div className="flex space-x-6">
           <div>
-            <span className="text-h2FontSize font-semiBolded text-textColor">
+            <span className="text-h2FontSize font-semiBolded text-ctaColor">
               0{days}
             </span>
-            <span className="text-tinyFontSize text-titleColor tracking-wide font-mediumWeight">
+            <span className="text-tinyFontSize text-titleColor/30 tracking-wide font-mediumWeight">
               Day
             </span>
           </div>
           <div>
-            <span className="text-h2FontSize font-semiBolded text-textColor">
+            <span className="text-h2FontSize font-semiBolded text-ctaColor">
               {hours}
             </span>
-            <span className="text-tinyFontSize text-titleColor tracking-wide font-mediumWeight">
+            <span className="text-tinyFontSize text-titleColor/30 tracking-wide font-mediumWeight">
               Hour
             </span>
           </div>
           <div>
-            <span className="text-h2FontSize font-semiBolded text-textColor">
+            <span className="text-h2FontSize font-semiBolded text-ctaColor">
               {minutes}
             </span>
-            <span className="text-tinyFontSize text-titleColor tracking-wide font-mediumWeight">
+            <span className="text-tinyFontSize text-titleColor/30 tracking-wide font-mediumWeight">
               Min
             </span>
           </div>
           <div>
-            <span className="text-h2FontSize font-semiBolded text-textColor">
+            <span className="text-h2FontSize font-semiBolded text-ctaColor">
               {seconds}
             </span>
-            <span className="text-tinyFontSize text-titleColor tracking-wide font-mediumWeight">
+            <span className="text-tinyFontSize text-titleColor/30 tracking-wide font-mediumWeight">
               Sec
             </span>
           </div>
@@ -59,7 +59,7 @@ function SliderContents() {
       <h2 className="text-[2rem] text-titleColor font-mediumWeight text-center md:text-h1FontSize mb-[0.5rem]">
         Today's Offer! Offer!
       </h2>
-      <p className="text-textColor text-smallFontSize font-mediumWeight text-center mb-[2rem]">
+      <p className="text-titleColor/40 text-smallFontSize font-mediumWeight text-center mb-[2rem]">
         Offer expires soon. Buy NOW and plant Today!
       </p>
       <div className="container">

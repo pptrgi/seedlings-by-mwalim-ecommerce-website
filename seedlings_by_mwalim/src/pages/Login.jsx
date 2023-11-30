@@ -64,17 +64,15 @@ function Login() {
           <div className="flex flex-col gap-[2rem] items-center sm:flex-row">
             <div
               onClick={handleGoogleLogin}
-              className="flex space-x-[0.25rem] items-center border-2 border-gray-200 px-[1.5rem] py-[0.75rem] rounded-lg hover:border-ctaColor"
+              className="flex space-x-[0.25rem] items-center px-[1.75rem] py-[0.75rem] rounded-full bg-ctaColor text-bodyColor cursor-pointer hover:bg-titleColor"
             >
               <span className="w-8">
                 <SiGoogle />
               </span>
-              <span className="text-textColor text-normalFontSize">
-                Sign-in with Google
-              </span>
+              <span className=" text-normalFontSize">Sign-in with Google</span>
             </div>
             <div onClick={hangleSignOut}>
-              <span className="bg-titleColor px-[1.5rem] py-[0.75rem] text-white text-normalFontSize rounded-lg hover:bg-ctaColor">
+              <span className="border-2 border-titleColor/60 text-titleColor/80 px-[1.5rem] py-[0.75rem] text-normalFontSize rounded-full cursor-pointer hover:border-titleColor hover:text-titleColor">
                 Sign Out
               </span>
             </div>

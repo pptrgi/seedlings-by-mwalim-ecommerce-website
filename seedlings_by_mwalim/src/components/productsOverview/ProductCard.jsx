@@ -1,8 +1,8 @@
-import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { ToastContainer, toast } from "react-toastify";
-import { IoIosCart } from "react-icons/io";
+import { MdAddShoppingCart } from "react-icons/md";
+
 import { addToCart } from "../../redux/seedlingSlice";
 
 function ProductCard({ product }) {
@@ -23,7 +23,7 @@ function ProductCard({ product }) {
     });
   };
   return (
-    <div className="border-2 border-gray-200 bg-whiteColor w-full h-72 rounded-md md:h-[21rem] lg:h-[22rem]">
+    <div className="border-[1.8px] border-titleColor/10 bg-whiteColor w-full h-72 rounded-md md:h-[21rem] lg:h-[22rem]">
       <div
         onClick={handleDetailPage}
         className="relative group h-3/4 overflow-hidden bg-gray-200 rounded-t-md border-b-[1px] border-b-gray-100"
@@ -54,16 +54,16 @@ function ProductCard({ product }) {
                 })
               ) & toast.success(`${product.name} added successfully`)
             }
-            className=" flex gap-1 items-center text-smallerFontSize text-ctaColor font-mediumWeight cursor-pointer hover:font-semiBolded hover:text-smallFontSize"
+            className="text-normalFontSize text-ctaColor font-mediumWeight cursor-pointer sm:text-[1.125rem] hover:text-titleColor"
           >
-            <IoIosCart /> add
+            <MdAddShoppingCart />
           </span>
         </div>
         <div className="flex gap-2 items-center">
           <h3 className="text-textColor text-smallerFontSize font-mediumWeight">
             KES {product.newprice}
           </h3>
-          <h3 className="text-textColor text-smallerFontSize line-through">
+          <h3 className="text-textColor/60 text-smallerFontSize line-through">
             KES {product.oldPrice}
           </h3>
         </div>
