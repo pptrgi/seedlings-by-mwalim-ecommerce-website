@@ -120,7 +120,7 @@ function Footer() {
           <span className="text-textColor text-smallFontSize">
             Copyright &#169; 2023. Developed by{" "}
             <a
-              href="https://ptrgitonga.vercel.app"
+              href="https://pgitonga.vercel.app"
               className="font-semiBolded text-ctaColor underline underline-offset-2 hover:text-titleColor"
             >
               Peter Gitonga
