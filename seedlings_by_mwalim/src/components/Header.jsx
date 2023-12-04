@@ -4,7 +4,7 @@ import { IoIosCart, IoMdMenu } from "react-icons/io";
 import { BiX } from "react-icons/bi";
 import { useSelector } from "react-redux";
 import { BiUser, BiCategory } from "react-icons/bi";
-import { FaRegUserCircle } from "react-icons/fa";
+
 import seedlingsLogo from "/images/logos/seedlingsLogo.png";
 
 function Header() {
@@ -13,8 +13,8 @@ function Header() {
   const userInfo = useSelector((state) => state.seedling.userInfo);
 
   return (
-    <div className="bg-bodyColor w-screen py-[0.75rem] sm:py-[1rem] fixed top-0 left-0 z-40">
-      <div>
+    <header className="fixed top-0 left-0 bg-bodyColor w-screen z-40 py-[0.75rem] sm:py-[1rem]">
+      <nav>
         <div className="container flex justify-between items-center">
           <Link to="/" className=" w-[7rem] h-[1.75rem] sm:w-48 sm:h-8">
             <img
@@ -24,28 +24,27 @@ function Header() {
               loading="eager"
             />
           </Link>
-          <div className="hidden justify-center gap-6 items-center text-normalFontSize sm:flex">
-            <a
-              href="#products"
-              className="text-titleColor/50 tracking-wide font-normalWeight hover:text-ctaColor"
+          <div className="hidden justify-center gap-[1.5rem] items-center text-normalFontSize md:flex">
+            <Link
+              to={"/"}
+              className="text-titleColor/50 tracking-wide font-semiBolded hover:text-ctaColor"
             >
-              Fruits
-            </a>
-            <a
-              href="#products"
-              className="text-titleColor/50 tracking-wide font-normalWeight hover:text-ctaColor"
+              Home
+            </Link>
+            <Link
+              to={"/#categories"}
+              className="text-titleColor/50 tracking-wide font-semiBolded hover:text-ctaColor"
             >
-              Trees
-            </a>
-            <a
-              href="#products"
-              className="text-titleColor/50 tracking-wide font-normalWeight hover:text-ctaColor"
+              Categories
+            </Link>
+            <Link
+              to={"/#products"}
+              className="text-titleColor/50 tracking-wide font-semiBolded hover:text-ctaColor"
             >
-              Flowers
-            </a>
+              Products
+            </Link>
             <Link to="/contacts">
-              {" "}
-              <span className="text-titleColor/50 tracking-wide font-normalWeight hover:text-ctaColor">
+              <span className="text-titleColor/50 tracking-wide font-semiBolded hover:text-ctaColor">
                 Contact
               </span>
             </Link>
@@ -59,20 +58,20 @@ function Header() {
                 </span>
               </div>
             </Link>
-            <div className="flex gap-[0.75rem] items-center">
-              <Link to="/login">
-                {userInfo ? (
-                  <img
-                    src={userInfo.image}
-                    alt="User Profile"
-                    className="w-8 h-8 rounded-full"
-                  />
-                ) : (
-                  <span className="px-[2rem] py-[0.75rem] bg-ctaColor text-normalFontSize text-bodyColor rounded-full cursor-pointer hover:bg-titleColor">
-                    Sign In
-                  </span>
-                )}
-              </Link>
+
+            <Link to="/login" className="flex gap-[0.75rem] items-center">
+              {userInfo ? (
+                <img
+                  src={userInfo.image}
+                  alt={`${userInfo?.name.split(" ")[0]}'s profile`}
+                  className="w-8 h-8 rounded-full"
+                />
+              ) : (
+                <span className="px-[2rem] py-[0.75rem] bg-ctaColor text-normalFontSize text-bodyColor rounded-full cursor-pointer hover:bg-titleColor">
+                  Sign In
+                </span>
+              )}
+
               <div>
                 {userInfo && (
                   <span className="text-textColor text-smallFontSize">{`Hi, ${
@@ -80,17 +79,17 @@ function Header() {
                   }`}</span>
                 )}
               </div>
-            </div>
+            </Link>
           </div>
           {showMenu && (
-            <div className="z-50 sm:hidden sm:z-0">
+            <div className="z-50 md:hidden">
               <div className="absolute top-0 left-0 w-3/4 min-h-screen bg-bodyColor border-r-[1px] border-r-gray-200">
                 <div className="pt-[3rem]">
                   <span
                     onClick={(e) => setShowMenu(false)}
                     className="flex justify-end items-center px-6 text-textColor hover:text-titleColor"
                   >
-                    <BiX className="w-8 h-8" />
+                    <BiX className="text-[1.5rem]" />
                   </span>
                 </div>
                 <div
@@ -131,39 +130,48 @@ function Header() {
                     alt="Seedlings by Mwalim Logo"
                   />
                 </Link>
-                <div
-                  onClick={(e) => setShowMenu(false)}
-                  className="flex flex-col gap-3 flex-items px-6 text-normalFontSize"
-                >
-                  <a
-                    href="#products"
+                <div className="flex flex-col gap-3 flex-items px-6 text-normalFontSize">
+                  <Link
+                    to={"/"}
+                    onClick={(e) => setShowMenu(false)}
                     className="text-textColor font-normalWeight hover:text-titleColor"
                   >
-                    Fruits
-                  </a>
-                  <a
-                    href="#products"
+                    Home
+                  </Link>
+                  <Link
+                    to={"/#categories"}
+                    onClick={(e) => setShowMenu(false)}
                     className="text-textColor font-normalWeight hover:text-titleColor"
                   >
-                    Trees
-                  </a>
-                  <a
-                    href="#products"
+                    Categories
+                  </Link>
+                  <Link
+                    to={"/#products"}
+                    onClick={(e) => setShowMenu(false)}
                     className="text-textColor font-normalWeight hover:text-titleColor"
                   >
-                    Flowers
-                  </a>
-                  <a
-                    href="#products"
+                    Products
+                  </Link>
+                  <Link
+                    to={"/cart"}
+                    onClick={(e) => setShowMenu(false)}
                     className="text-textColor font-normalWeight hover:text-titleColor"
                   >
-                    Vegetables
-                  </a>
-                  <Link to="/contacts">
-                    {" "}
-                    <span className="text-textColor font-normalWeight hover:text-titleColor">
-                      Contact Us
-                    </span>
+                    Cart
+                  </Link>
+                  <Link
+                    to={"/contacts"}
+                    onClick={(e) => setShowMenu(false)}
+                    className="text-textColor font-normalWeight hover:text-titleColor"
+                  >
+                    Contact
+                  </Link>
+                  <Link
+                    to={"/login"}
+                    onClick={(e) => setShowMenu(false)}
+                    className="text-textColor font-normalWeight hover:text-titleColor"
+                  >
+                    Signin
                   </Link>
                 </div>
                 <div
@@ -187,8 +195,8 @@ function Header() {
               </div>
             </div>
           )}
-          <div className="sm:hidden">
-            <div className="flex justify-center items-center gap-5">
+          <div className="md:hidden">
+            <div className="flex justify-center items-center gap-[1rem] sm:gap-[1.75rem]">
               <a
                 href="#categories"
                 className="group flex flex-col gap-[1px] items-center"
@@ -219,8 +227,8 @@ function Header() {
                 className="group flex flex-col gap-[1px] items-center"
               >
                 {userInfo ? (
-                  <span className="text-titleColor text-smallFontSize group-hover:text-ctaColor">
-                    <FaRegUserCircle />
+                  <span className="w-[1.25rem] h-[1.25rem] flex justify-center items-center rounded-full bg-green-700/90 text-smallFontSize text-whiteColor/80 uppercase sm:text-normalFontSize">
+                    {userInfo.name.charAt(0)}
                   </span>
                 ) : (
                   <span className="text-titleColor text-smallFontSize group-hover:text-ctaColor">
@@ -251,8 +259,8 @@ function Header() {
             </div>
           </div>
         </div>
-      </div>
-    </div>
+      </nav>
+    </header>
   );
 }
 

@@ -45,8 +45,8 @@ function Products({ products }) {
               onClick={(e) => handleGroupClick(e, index)}
               className={
                 active == index
-                  ? "flex ml-[1rem] text-normalFontSize text-titleColor font-mediumWeight cursor-pointer"
-                  : "flex ml-[1rem] text-normalFontSize text-titleColor/40 font-mediumWeight cursor-pointer hover:underline underline-offset-2"
+                  ? "flex ml-[1rem] text-normalFontSize text-titleColor font-mediumWeight cursor-pointer tracking-wide"
+                  : "flex ml-[1rem] text-normalFontSize text-titleColor/40 font-mediumWeight cursor-pointer hover:underline underline-offset-2 tracking-wide"
               }
             >
               {navItem.name}

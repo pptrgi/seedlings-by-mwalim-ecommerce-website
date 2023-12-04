@@ -59,15 +59,15 @@ function CheckoutDetails() {
   };
 
   return (
-    <div>
-      <div className="flex flex-col gap-2 justify-center items-center border-2 border-gray-200 bg-whiteColor px-2 py-4 rounded-[1rem]">
+    <div className="flex justify-center items-center md:justify-start md:items-start">
+      <div className="flex flex-col gap-2 justify-center items-center border-2 border-gray-200 bg-whiteColor px-2 py-4 rounded-[1rem] w-full max-w-[320px] md:max-w-none">
         <div className="py-[2rem]">
           <div className="flex justify-between items-center w-[250px] border-b-[1px] border-b-gray-200">
             <span className="text-textColor font-mediumWeight text-smallFontSize">
               Subtotal
             </span>
             <span className="text-titleColor font-mediumWeight text-smallFontSize">
-              KES {totalAmount}
+              KES {totalAmount.toLocaleString("en-US")}
             </span>
           </div>
           <div className="flex justify-between items-center w-[250px] my-[2rem] border-b-[1px] border-b-gray-200">
@@ -94,17 +94,17 @@ function CheckoutDetails() {
               name="totalFigure"
               className="text-titleColor font-mediumWeight text-normalFontSize"
             >
-              KES {totalAmount}
+              KES {totalAmount.toLocaleString("en-US")}
             </span>
           </div>
 
           <div
             onClick={handleProceedToCheckout}
-            className={
+            className={`text-whiteColor text-smallFontSize font-mediumWeight cursor-pointer text-center px-6 py-2 ${
               payNow
-                ? "bg-titleColor text-whiteColor text-smallFontSize font-mediumWeight cursor-pointer text-center px-6 py-2 hover:bg-ctaColor"
-                : "bg-ctaColor text-whiteColor text-smallFontSize font-mediumWeight cursor-pointer text-center px-6 py-2 hover:bg-titleColor"
-            }
+                ? "bg-titleColor/70 hover:bg-titleColor/90"
+                : "bg-ctaColor hover:bg-titleColor"
+            }`}
           >
             proceed to checkout
           </div>
@@ -139,10 +139,20 @@ function CheckoutDetails() {
                   <button
                     type="submit"
                     className="bg-green-500 px-[1rem] py-[0.5rem] text-whiteColor text-smallFontSize rounded-full hover:bg-titleColor"
-                  >{`Pay ${totalAmount} Now`}</button>
+                  >
+                    Pay{" "}
+                    <span className="font-semiBolded">
+                      {totalAmount.toLocaleString("en-US")}
+                    </span>{" "}
+                    Now
+                  </button>
                 </div>
                 <div className="my-[1.5rem] flex space-x-2 items-center">
-                  <span className="text-textColor text-smallerFontSize">
+                  <span
+                    className={`${
+                      errorPaying ? "text-red-400" : "text-textColor"
+                    } text-smallerFontSize`}
+                  >
                     <IoMdInformationCircleOutline />
                   </span>
                   {errorPaying ? (
@@ -164,7 +174,7 @@ function CheckoutDetails() {
       </div>
       <ToastContainer
         position="top-left"
-        autoClose={2000}
+        autoClose={4000}
         hideProgressBar={false}
         newestOnTop={false}
         closeOnClick

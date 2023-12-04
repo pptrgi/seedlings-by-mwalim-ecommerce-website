@@ -103,9 +103,10 @@ function SliderContents() {
                 <h3 className="absolute top-20 text-titleColor text-h1FontSize mb-[0.5rem] font-mediumWeight">
                   {data.textSubHeading}
                 </h3>
-                <span className="absolute bottom-8 italic text-textColor text-smallFontSize">
-                  Category: {data.category}
-                </span>
+                <p className="absolute bottom-8 italic text-titleColor/50 text-smallFontSize">
+                  Category:{" "}
+                  <span className="font-mediumWeight">{data.category}</span>
+                </p>
               </SwiperSlide>
             );
           })}

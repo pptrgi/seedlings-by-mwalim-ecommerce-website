@@ -39,12 +39,12 @@ function ShopByCategory({ seedlings }) {
       <h1 className="text-[2rem] text-titleColor font-mediumWeight text-center mb-[4rem] md:text-h1FontSize">
         View by Category
       </h1>
-      <div className="container grid grid-cols-1 gap-3 sm:grid-cols-3 px-[3rem] sm:px-[2rem] lg:px-[3rem]">
+      <div className="container grid grid-cols-1 gap-3 px-[3rem] sm:px-[2rem] lg:px-[3rem] sm:grid-cols-2 md:grid-cols-3">
         {categoryKeys.map((categoryKey, index) => {
           return (
             <div
               key={index}
-              className="relative group bg-whiteColor shadow-md h-[300px] overflow-hidden lg:h-[320px]"
+              className="relative group bg-whiteColor shadow-md h-[300px] overflow-hidden lg:h-[320px] max-w-[250px] sm:max-w-none"
             >
               <img
                 className="absolute bottom-[0.5rem] left-[3rem]"

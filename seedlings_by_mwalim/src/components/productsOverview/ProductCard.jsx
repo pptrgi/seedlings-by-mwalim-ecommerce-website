@@ -23,7 +23,7 @@ function ProductCard({ product }) {
     });
   };
   return (
-    <div className="border-[1.8px] border-titleColor/10 bg-whiteColor w-full h-72 rounded-md md:h-[21rem] lg:h-[22rem]">
+    <div className="border-[1.8px] border-titleColor/10 bg-whiteColor w-full h-72 rounded-md max-w-[180px] md:h-[21rem] lg:h-[22rem]">
       <div
         onClick={handleDetailPage}
         className="relative group h-3/4 overflow-hidden bg-gray-200 rounded-t-md border-b-[1px] border-b-gray-100"
@@ -36,7 +36,7 @@ function ProductCard({ product }) {
       </div>
       <div className="flex flex-col justify-between h-1/4 items-start px-[0.5rem] py-[0.5rem]">
         <div className="flex flex-row justify-between items-center w-full">
-          <span className="text-titleColor text-smallFontSize font-mediumWeight">
+          <span className="text-titleColor text-smallFontSize font-mediumWeight tracking-wide">
             {product.name}
           </span>
           <span
@@ -60,7 +60,7 @@ function ProductCard({ product }) {
           </span>
         </div>
         <div className="flex gap-2 items-center">
-          <h3 className="text-textColor text-smallerFontSize font-mediumWeight">
+          <h3 className="text-textColor text-smallerFontSize font-semiBolded">
             KES {product.newprice}
           </h3>
           <h3 className="text-textColor/60 text-smallerFontSize line-through">
@@ -70,7 +70,7 @@ function ProductCard({ product }) {
       </div>
       <ToastContainer
         position="top-left"
-        autoClose={2500}
+        autoClose={4000}
         hideProgressBar={false}
         newestOnTop={false}
         closeOnClick

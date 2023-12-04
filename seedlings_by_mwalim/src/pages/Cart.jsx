@@ -1,9 +1,9 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import { IoMdArrowBack } from "react-icons/io";
-import { FaRegTrashAlt } from "react-icons/fa";
+import { MdRemoveShoppingCart } from "react-icons/md";
 import { useSelector, useDispatch } from "react-redux";
 import { ToastContainer, toast } from "react-toastify";
+
 import { resetCart } from "../redux/seedlingSlice";
 import ShoppingCart from "../components/cart/ShoppingCart";
 import CheckoutDetails from "../components/cart/CheckoutDetails";
@@ -16,8 +16,8 @@ function Cart() {
       <div className="container">
         {productItems.length > 0 ? (
           <>
-            <div className="grid grid-cols-1 gap-3 md:grid-cols-5">
-              <div className="md:col-span-3">
+            <div className="grid grid-cols-1 gap-[2.5rem] md:grid-cols-5 md:gap-[0.75rem] lg:gap-[3rem]">
+              <div className="col-span-1 md:col-span-3">
                 <h2 className="text-titleColor text-normalFontSize font-mediumWeight mb-[1rem]">
                   Shopping Cart
                 </h2>
@@ -27,7 +27,7 @@ function Cart() {
                   })}
                 </div>
               </div>
-              <div className="md:col-span-2">
+              <div className="col-span-1 md:col-span-2">
                 <h2 className="text-titleColor text-normalFontSize font-mediumWeight mb-[1rem]">
                   Checkout Totals
                 </h2>
@@ -36,27 +36,29 @@ function Cart() {
             </div>
             <div className="flex flex-col space-y-[1rem] justify-center items-center md:space-y-0 md:space-x-[2rem] mt-[2rem] md:flex-row">
               <Link to="/">
-                <div className="group flex space-x-[0.5rem] items-center px-[1rem] py-[0.5rem] border-[1px] border-textColor rounded-lg">
-                  <span className="text-textColor text-normalFontSize font-semiBolded group-hover:-translate-x-1">
+                <div className="group flex space-x-[0.4rem] items-center px-[1rem] py-[0.5rem] rounded-lg">
+                  <span className="text-textColor text-normalFontSize font-semiBolded group-hover:text-titleColor group-hover:-translate-x-1">
                     <IoMdArrowBack />
                   </span>
-                  <span className="text-textColor text-smallFontSize font-semiBolded">
+                  <span className="text-textColor text-smallFontSize font-semiBolded group-hover:text-titleColor">
                     Continue shopping
                   </span>
                 </div>
               </Link>
-              <div
-                onClick={() =>
-                  dispatch(resetCart()) & toast.error("Your cart is emptied")
-                }
-                className="flex space-x-[0.25rem] items-center bg-red-500 px-[1rem] py-[0.5rem] rounded-lg cursor-pointer hover:bg-red-600"
-              >
-                <span className="text-whiteColor text-smallFontSize font-semiBolded">
-                  reset cart
-                </span>
-                <span className="text-whiteColor text-smallFontSize font-semiBolded">
-                  <FaRegTrashAlt />
-                </span>
+              <div className="group">
+                <div
+                  onClick={() =>
+                    dispatch(resetCart()) & toast.error("Your cart is emptied")
+                  }
+                  className="flex gap-x-[0.25rem] items-center text-whiteColor bg-red-500/80 px-[1rem] py-[0.5rem] rounded-lg cursor-pointer  group-hover:bg-red-500"
+                >
+                  <span className="text-smallFontSize font-semiBolded">
+                    empty cart
+                  </span>
+                  <span className="text-smallFontSize font-semiBolded">
+                    <MdRemoveShoppingCart />
+                  </span>
+                </div>
               </div>
             </div>
           </>
@@ -80,7 +82,7 @@ function Cart() {
       </div>
       <ToastContainer
         position="top-left"
-        autoClose={2500}
+        autoClose={4000}
         hideProgressBar={false}
         newestOnTop={false}
         closeOnClick

@@ -82,7 +82,7 @@ function DirectContact() {
 
       <ToastContainer
         position="top-left"
-        autoClose={2500}
+        autoClose={4000}
         hideProgressBar={false}
         newestOnTop={false}
         closeOnClick
