@@ -63,16 +63,16 @@ function Cart() {
             </div>
           </>
         ) : (
-          <div>
-            <h2 className="text-textColor text-h3FontSize text-center pt-[4rem] mb-[1rem]">
-              Your cart is empty. Return ufanye shopping basi.
+          <div className="flex flex-col gap-[1.75rem]">
+            <h2 className="text-textColor text-h3FontSize text-center pt-[4rem] mb-[1rem] leading-none">
+              Your cart is empty. Time to go shopping.
             </h2>
             <Link to="/" className="flex justify-center items-center">
-              <div className="group flex space-x-[0.5rem] items-center px-[1rem] py-[0.75rem] bg-ctaColor rounded-lg">
-                <span className="text-whiteColor text-normalFontSize font-semiBolded group-hover:-translate-x-1">
+              <div className="group flex gap-x-[0.5rem] items-center text-ctaColor rounded-lg">
+                <span className="text-normalFontSize group-hover:-translate-x-1 group-hover:text-titleColor">
                   <IoMdArrowBack />
                 </span>
-                <span className="text-whiteColor text-smallFontSize font-semiBolded">
+                <span className=" text-normalFontSize font-bold tracking-wide group-hover:text-titleColor">
                   Go shopping
                 </span>
               </div>

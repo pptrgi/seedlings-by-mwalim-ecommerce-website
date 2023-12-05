@@ -33,11 +33,11 @@ function ThreeMeans() {
           <div className="group flex space-x-1 items-center py-2 px-4 border-[1px] border-gray-200 hover:border-ctaColor cursor-pointer">
             <a
               href="mailto:pptrgitonga@gmail.com"
-              className="text-textColor text-smallerFontSize group-hover:text-ctaColor"
+              className="text-textColor text-smallFontSize tracking-wide group-hover:text-ctaColor sm:text-normalFontSize"
             >
               send email
             </a>
-            <span className="text-textColor text-smallerFontSize group-hover:translate-x-1 group-hover:text-ctaColor">
+            <span className="text-textColor text-normalFontSize group-hover:translate-x-1 group-hover:text-ctaColor">
               <BiRightArrowAlt />
             </span>
           </div>
@@ -55,11 +55,11 @@ function ThreeMeans() {
           <div className="group flex space-x-1 items-center py-2 px-4 border-[1px] border-gray-200 hover:border-ctaColor cursor-pointer">
             <a
               href="https://wa.me/254700119134"
-              className="text-textColor text-smallerFontSize group-hover:text-ctaColor"
+              className="text-textColor text-smallFontSize tracking-wide group-hover:text-ctaColor sm:text-normalFontSize"
             >
               send text
             </a>
-            <span className="text-textColor text-smallerFontSize group-hover:translate-x-1 group-hover:text-ctaColor">
+            <span className="text-textColor text-normalFontSize group-hover:translate-x-1 group-hover:text-ctaColor">
               <BiRightArrowAlt />
             </span>
           </div>
@@ -77,19 +77,19 @@ function ThreeMeans() {
           {copy ? (
             <span
               onClick={(e) => setCopy(false)}
-              className="text-ctaColor text-smallerFontSize font-mediumWeight py-2 px-4 cursor-pointer"
+              className="text-ctaColor text-smallFontSize font-mediumWeight py-2 px-4 cursor-pointer tracking-wide sm:text-normalFontSize"
             >
               Copied!
             </span>
           ) : (
             <div
               onClick={handleCopyNumber}
-              className="group flex space-x-1 items-center py-2 px-4 border-[1px] border-gray-200 hover:border-ctaColor cursor-pointer"
+              className="group flex space-x-2 items-center py-2 px-4 border-[1px] border-gray-200 hover:border-ctaColor cursor-pointer"
             >
-              <span className="text-textColor text-smallerFontSize group-hover:-translate-x-1 group-hover:text-ctaColor">
+              <span className="text-textColor text-normalFontSize group-hover:text-ctaColor">
                 <BiCopy />
               </span>
-              <span className="text-textColor text-smallerFontSize group-hover:text-ctaColor">
+              <span className="text-textColor text-smallFontSize tracking-wide group-hover:text-ctaColor sm:text-normalFontSize">
                 copy number
               </span>
             </div>

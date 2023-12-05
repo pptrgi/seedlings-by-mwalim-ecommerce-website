@@ -71,9 +71,9 @@ function DirectContact() {
             <div className="flex justify-end items-start w-full pt-[2rem] pb-[1rem]">
               <button
                 type="submit"
-                className="font-mediumWeight text-whiteColor bg-ctaColor rounded-sm px-[1.5rem] py-[0.75rem] text-smallFontSize hover:bg-titleColor"
+                className="font-mediumWeight text-whiteColor bg-ctaColor tracking-wider px-[1.5rem] py-[0.75rem] text-smallFontSize hover:bg-titleColor sm:text-normalFontSize"
               >
-                Send Message
+                send message
               </button>
             </div>
           </div>

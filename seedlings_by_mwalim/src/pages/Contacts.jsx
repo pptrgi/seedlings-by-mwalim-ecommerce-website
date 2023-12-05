@@ -11,7 +11,7 @@ function Contacts() {
       <div className=" flex justify-center items-center">
         <p className="text-smallerFontSize text-textColor font-normalWeight max-w-sm text-center leading-tight px-4 lg:max-w-md">
           Hi, you can use the contact form to talk to us directly from here, or
-          send Email, Whatsapp message, and copy number to make a phone Call.
+          send Email, Whatsapp message, or copy number to make a phone Call.
         </p>
       </div>
       <div className="container pt-[4rem]">

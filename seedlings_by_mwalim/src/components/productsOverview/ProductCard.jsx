@@ -23,7 +23,7 @@ function ProductCard({ product }) {
     });
   };
   return (
-    <div className="border-[1.8px] border-titleColor/10 bg-whiteColor w-full h-72 rounded-md max-w-[180px] md:h-[21rem] lg:h-[22rem]">
+    <div className="border-[1.8px] border-titleColor/10 bg-whiteColor w-full h-72 rounded-md max-w-[180px] md:h-[21rem] lg:h-[22rem] sm:max-w-none">
       <div
         onClick={handleDetailPage}
         className="relative group h-3/4 overflow-hidden bg-gray-200 rounded-t-md border-b-[1px] border-b-gray-100"
