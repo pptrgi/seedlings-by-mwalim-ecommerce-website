@@ -27,24 +27,24 @@ function Header() {
           <div className="hidden justify-center gap-[1.5rem] items-center text-normalFontSize md:flex">
             <Link
               to={"/"}
-              className="text-titleColor/50 tracking-wide font-semiBolded hover:text-ctaColor"
+              className="text-titleColor/50 tracking-wide font-semiBolded hover:text-titleColor"
             >
               Home
             </Link>
             <Link
               to={"/#categories"}
-              className="text-titleColor/50 tracking-wide font-semiBolded hover:text-ctaColor"
+              className="text-titleColor/50 tracking-wide font-semiBolded hover:text-titleColor"
             >
               Categories
             </Link>
             <Link
               to={"/#products"}
-              className="text-titleColor/50 tracking-wide font-semiBolded hover:text-ctaColor"
+              className="text-titleColor/50 tracking-wide font-semiBolded hover:text-titleColor"
             >
               Products
             </Link>
             <Link to="/contacts">
-              <span className="text-titleColor/50 tracking-wide font-semiBolded hover:text-ctaColor">
+              <span className="text-titleColor/50 tracking-wide font-semiBolded hover:text-titleColor">
                 Contact
               </span>
             </Link>
@@ -59,22 +59,22 @@ function Header() {
               </div>
             </Link>
 
-            <Link to="/login" className="flex gap-[0.75rem] items-center">
+            <Link to="/login" className="flex gap-[0.75rem] items-center group">
               {userInfo ? (
                 <img
                   src={userInfo.image}
                   alt={`${userInfo?.name.split(" ")[0]}'s profile`}
-                  className="w-8 h-8 rounded-full"
+                  className="w-8 h-8 rounded-full bg-green-700/90"
                 />
               ) : (
-                <span className="px-[2rem] py-[0.75rem] bg-ctaColor text-normalFontSize text-bodyColor rounded-full cursor-pointer hover:bg-titleColor">
+                <span className="px-[2rem] py-[0.75rem] bg-ctaColor text-normalFontSize text-bodyColor font-semiBolded rounded-full cursor-pointer hover:bg-titleColor">
                   Sign In
                 </span>
               )}
 
               <div>
                 {userInfo && (
-                  <span className="text-textColor text-smallFontSize">{`Hi, ${
+                  <span className="text-textColor text-smallFontSize font-semiBolded group-hover:text-titleColor">{`Hi, ${
                     userInfo.name.split(" ")[0]
                   }`}</span>
                 )}
@@ -108,7 +108,7 @@ function Header() {
                       <div className="relative group w-8">
                         <span
                           href=""
-                          className="text-titleColor font-mediumWeight text-[1.125rem] group-hover:text-ctaColor"
+                          className="text-titleColor/80 font-mediumWeight text-[1.125rem] group-hover:text-ctaColor"
                         >
                           <IoIosCart />
                         </span>
@@ -227,9 +227,11 @@ function Header() {
                 className="group flex flex-col gap-[1px] items-center"
               >
                 {userInfo ? (
-                  <span className="w-[1.25rem] h-[1.25rem] flex justify-center items-center rounded-full bg-green-700/90 text-smallFontSize text-whiteColor/80 uppercase sm:text-normalFontSize">
-                    {userInfo.name.charAt(0)}
-                  </span>
+                  <img
+                    src={userInfo.image}
+                    className="w-[1.25rem] h-[1.25rem] rounded-full bg-green-700/90 text-smallFontSize text-whiteColor/80 uppercase sm:text-normalFontSize"
+                    alt="user"
+                  />
                 ) : (
                   <span className="text-titleColor text-smallFontSize group-hover:text-ctaColor">
                     <BiUser />
