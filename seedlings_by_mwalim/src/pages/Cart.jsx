@@ -16,7 +16,7 @@ function Cart() {
       <div className="container">
         {productItems.length > 0 ? (
           <>
-            <div className="grid grid-cols-1 gap-[2.5rem] md:grid-cols-5 md:gap-[0.75rem] lg:gap-[3rem]">
+            <div className="grid grid-cols-1 gap-[2.5rem] md:grid-cols-5 md:gap-[1.8rem] lg:gap-[3rem]">
               <div className="col-span-1 md:col-span-3">
                 <h2 className="text-titleColor text-normalFontSize font-mediumWeight mb-[1rem]">
                   Shopping Cart
