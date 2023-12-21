@@ -41,21 +41,23 @@ function CheckoutDetails() {
 
   const handleMpesaPay = async (e) => {
     e.preventDefault();
-    await axios
-      .post("http://localhost:2828/api/prompt-user", {
-        phone: phoneNumber,
-        amount: totalAmount,
-      })
-      .then((res) => {
-        setPhoneNumber("");
-        setTotalFigure(null);
-        dispatch(resetCart());
-      })
-      .catch((err) => {
-        console.log(err);
-        setErrorPaying(true);
-        setTimeout(() => setErrorPaying(false), 10000);
-      });
+    try {
+      await axios.post(
+        "https://seedlings-by-mwalim-backend.onrender.com/api/prompt-user",
+        {
+          phone: phoneNumber,
+          amount: totalAmount,
+        }
+      );
+
+      setPhoneNumber("");
+      setTotalFigure(null);
+      dispatch(resetCart());
+    } catch (error) {
+      console.log(error.message);
+      setErrorPaying(true);
+      setTimeout(() => setErrorPaying(false), 10000);
+    }
   };
 
   return (
