@@ -196,15 +196,15 @@ function Header() {
             </div>
           )}
           <div className="md:hidden">
-            <div className="flex justify-center items-center gap-[1rem] sm:gap-[1.75rem]">
+            <div className="flex justify-center items-center gap-[1.125rem] sm:gap-[1.75rem]">
               <a
                 href="#categories"
                 className="group flex flex-col gap-[1px] items-center"
               >
-                <span className="text-titleColor text-smallFontSize group-hover:text-ctaColor">
+                <span className="text-titleColor text-normalFontSize group-hover:text-ctaColor">
                   <BiCategory />
                 </span>
-                <span className="text-textColor text-tinyFontSize group-hover:text-ctaColor">
+                <span className="text-textColor text-tinyFontSize tracking-wide group-hover:text-ctaColor">
                   Category
                 </span>
               </a>
@@ -212,13 +212,13 @@ function Header() {
                 to="/cart"
                 className="relative group flex flex-col gap-[1px] items-center"
               >
-                <span className="text-titleColor text-smallFontSize group-hover:text-ctaColor">
+                <span className="text-titleColor text-normalFontSize group-hover:text-ctaColor">
                   <IoIosCart />
                 </span>
                 <span className="absolute -top-3 right-2 bg-ctaColor w-4 h-4 rounded-full text-whiteColor text-center text-[10px]">
                   {productItems.length}
                 </span>
-                <span className="text-textColor text-tinyFontSize group-hover:text-ctaColor">
+                <span className="text-textColor text-tinyFontSize tracking-wide group-hover:text-ctaColor">
                   Cart
                 </span>
               </Link>
@@ -233,16 +233,16 @@ function Header() {
                     alt="user"
                   />
                 ) : (
-                  <span className="text-titleColor text-smallFontSize group-hover:text-ctaColor">
+                  <span className="text-titleColor text-normalFontSize group-hover:text-ctaColor">
                     <BiUser />
                   </span>
                 )}
                 {userInfo ? (
-                  <span className="text-textColor text-tinyFontSize">{`Hi, ${
+                  <span className="text-textColor text-tinyFontSize tracking-wide">{`Hi, ${
                     userInfo.name.split(" ")[0]
                   }`}</span>
                 ) : (
-                  <span className="text-textColor text-tinyFontSize group-hover:text-ctaColor">
+                  <span className="text-textColor text-tinyFontSize tracking-wide group-hover:text-ctaColor">
                     Account
                   </span>
                 )}
@@ -251,10 +251,10 @@ function Header() {
                 onClick={(e) => setShowMenu(true)}
                 className="group flex flex-col gap-[1px] items-center"
               >
-                <span className="text-titleColor text-smallFontSize group-hover:text-ctaColor">
+                <span className="text-titleColor text-normalFontSize group-hover:text-ctaColor">
                   <IoMdMenu />
                 </span>
-                <span className="text-textColor text-tinyFontSize group-hover:text-ctaColor">
+                <span className="text-textColor text-tinyFontSize tracking-wide group-hover:text-ctaColor">
                   Menu
                 </span>
               </div>
