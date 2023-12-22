@@ -4,6 +4,7 @@ import { IoMdInformationCircleOutline } from "react-icons/io";
 import { toast, ToastContainer } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+
 import { resetCart } from "../../redux/seedlingSlice";
 import mpesaLogo from "/images/logos/MpesaLogo.png";
 
@@ -11,6 +12,7 @@ function CheckoutDetails() {
   const [totalAmount, setTotalAmount] = useState(0);
   const [payNow, setPayNow] = useState(false);
   const [errorPaying, setErrorPaying] = useState(false);
+  const [paymentInProgress, setPaymentInProgress] = useState(false);
   const productData = useSelector((state) => state.seedling.productData);
   const loggedInUserInfo = useSelector((state) => state.seedling.userInfo);
   const navigate = useNavigate();
@@ -41,6 +43,9 @@ function CheckoutDetails() {
 
   const handleMpesaPay = async (e) => {
     e.preventDefault();
+
+    setPaymentInProgress(true);
+
     try {
       await axios.post(
         "https://seedlings-by-mwalim-backend.onrender.com/api/prompt-user",
@@ -51,12 +56,14 @@ function CheckoutDetails() {
       );
 
       setPhoneNumber("");
-      setTotalFigure(null);
       dispatch(resetCart());
     } catch (error) {
-      console.log(error.message);
       setErrorPaying(true);
       setTimeout(() => setErrorPaying(false), 10000);
+
+      console.log(error.message);
+    } finally {
+      setPaymentInProgress(false);
     }
   };
 
@@ -140,13 +147,19 @@ function CheckoutDetails() {
                 <div className="mt-[1.5rem] flex justify-center items-center">
                   <button
                     type="submit"
-                    className="bg-green-500 px-[1rem] py-[0.5rem] text-whiteColor text-smallFontSize rounded-full hover:bg-titleColor"
+                    className="bg-green-500 px-[1.25rem] py-[0.5rem] text-whiteColor text-smallFontSize rounded-full hover:bg-titleColor"
                   >
-                    Pay{" "}
-                    <span className="font-semiBolded">
-                      {totalAmount.toLocaleString("en-US")}
-                    </span>{" "}
-                    Now
+                    {paymentInProgress ? (
+                      "Processing..."
+                    ) : (
+                      <span>
+                        Pay{" "}
+                        <span className="font-semiBolded">
+                          {totalAmount.toLocaleString("en-US")}
+                        </span>{" "}
+                        Now
+                      </span>
+                    )}
                   </button>
                 </div>
                 <div className="my-[1.5rem] flex space-x-2 items-center">
